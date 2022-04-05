@@ -8,6 +8,8 @@ use Swoole\Http\Request as SwooleRequest;
 use Laminas\Diactoros\ServerRequest;
 
 /**
+ * My new comment
+ *
  * Class ServerRequestBuilder
  * @package Insidestyles\SwooleBridge\Builder
  */
