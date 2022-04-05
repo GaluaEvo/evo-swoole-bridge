@@ -11,11 +11,12 @@ namespace Insidestyles\SwooleBridge\Adapter\Kernel;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
+use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\HttpFoundationFactoryInterface;
 use Symfony\Bridge\PsrHttpMessage\HttpMessageFactoryInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Nyholm\Psr7\Factory\Psr17Factory;
 
 /**
  * Class Psr15SymfonyKernel
@@ -51,7 +52,9 @@ class Psr15SymfonyKernel implements RequestHandlerInterface
     ) {
         $this->httpKernel = $httpKernel;
         $this->httpFoundationFactory = $httpFoundationFactory ?: new HttpFoundationFactory();
-        $this->httpMessageFactory = $httpMessageFactory ?: new DiactorosFactory();
+        $psr17Factory = new Psr17Factory();
+        $psrHttpFactory = new PsrHttpFactory($psr17Factory, $psr17Factory, $psr17Factory, $psr17Factory);
+        $this->httpMessageFactory = $httpMessageFactory ?: $psrHttpFactory;
     }
 
     /**
