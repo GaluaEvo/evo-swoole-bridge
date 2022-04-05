@@ -5,7 +5,7 @@ namespace Insidestyles\SwooleBridge\Builder;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Swoole\Http\Request as SwooleRequest;
-use Zend\Diactoros\ServerRequest;
+use Laminas\Diactoros\ServerRequest;
 
 /**
  * Class ServerRequestBuilder
