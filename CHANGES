@@ -1,0 +1,24 @@
+Version 0.4.0:
+ - fix server request build
+
+Version 0.3.0:
+ - refactor + illuminate support
+
+Version 0.2.2:
+ - fix psr15 symfony kernel
+
+Version 0.2.1:
+ - fix requirement
+
+Version 0.2.0:
+ - Merge branch 'master' into develop
+ - psr 15
+ - Merge branch 'release-0.1'
+ - Bumped version number to 0.1
+
+Version 0.1.0
+ - update with unit tests
+ - add builder, emitter
+ - Init
+ - Initial commit
+
